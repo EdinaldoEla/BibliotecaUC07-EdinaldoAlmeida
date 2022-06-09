@@ -1,0 +1,45 @@
+@model Usuario
+
+
+<div class="row justify-content-md-center">
+    <div class="jumbotron col-6">
+        <h1 class="row justify-content-md-center">Edição de dados de Usuário</h1>
+        <form asp-action="EditarUsuario" method="POST">
+            <div class="form-group">
+                <legend>Nome:</legend>
+                <input type="text" name="Nome" id="userNome" value="@Model.Nome" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <legend>Login:</legend>
+                <input type="text" name="Login" id="userLogin" value="@Model.Login" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <legend>Senha:</legend>
+                <input type="text" name="Senha" id="userSenha" readonly value="@Model.Senha" class="form-control" required />
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <legend>Tipo</legend>
+                    <select name="tipo" id="userTipo">
+                         @if (@Model.Tipo == Usuario.ADMIN)
+                         {
+                            <option value="@Usuario.ADMIN">Administrador</option>
+                            <option value="@Usuario.PADRAO">Padrão</option>
+                         }
+                         else
+                         {
+                            <option value="@Usuario.PADRAO">Padrão</option>
+                            <option value="@Usuario.ADMIN">Administrador</option>
+                         }
+                    </select>
+                </div>
+
+                <input type="hidden" asp-for="Id"/>
+
+                <div class="col-md-6">
+                    <input type="submit" class="btn btn-primary btn-lg" value="Alterar" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

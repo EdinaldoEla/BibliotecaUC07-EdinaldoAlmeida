@@ -14417,6 +14417,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "f:\\Edinaldo\\CursoInformática_Senac\\Módulo_2\\UC07\\Biblioteca\\Views\\Usuarios\\CadastroRealizado.cshtml",
+      "TargetPath": "Views\\Usuarios\\CadastroRealizado.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "f:\\Edinaldo\\CursoInformática_Senac\\Módulo_2\\UC07\\Biblioteca\\Views\\Livro\\_FormCadastro.cshtml",
       "TargetPath": "Views\\Livro\\_FormCadastro.cshtml",
       "FileKind": "mvc"
@@ -14424,6 +14429,16 @@
     {
       "FilePath": "f:\\Edinaldo\\CursoInformática_Senac\\Módulo_2\\UC07\\Biblioteca\\Views\\Livro\\Edicao.cshtml",
       "TargetPath": "Views\\Livro\\Edicao.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "f:\\Edinaldo\\CursoInformática_Senac\\Módulo_2\\UC07\\Biblioteca\\Views\\Usuarios\\EditarUsuario.cshtml",
+      "TargetPath": "Views\\Usuarios\\EditarUsuario.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "f:\\Edinaldo\\CursoInformática_Senac\\Módulo_2\\UC07\\Biblioteca\\Views\\Usuarios\\NeedAdmin.cshtml",
+      "TargetPath": "Views\\Usuarios\\NeedAdmin.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14442,8 +14457,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "f:\\Edinaldo\\CursoInformática_Senac\\Módulo_2\\UC07\\Biblioteca\\Views\\Usuarios\\RegistrarUsuarios.cshtml",
+      "TargetPath": "Views\\Usuarios\\RegistrarUsuarios.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "f:\\Edinaldo\\CursoInformática_Senac\\Módulo_2\\UC07\\Biblioteca\\Views\\Home\\Login.cshtml",
       "TargetPath": "Views\\Home\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "f:\\Edinaldo\\CursoInformática_Senac\\Módulo_2\\UC07\\Biblioteca\\Views\\Usuarios\\ListaDeUsuarios.cshtml",
+      "TargetPath": "Views\\Usuarios\\ListaDeUsuarios.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14474,6 +14499,11 @@
     {
       "FilePath": "f:\\Edinaldo\\CursoInformática_Senac\\Módulo_2\\UC07\\Biblioteca\\Views\\Livro\\Cadastro.cshtml",
       "TargetPath": "Views\\Livro\\Cadastro.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "f:\\Edinaldo\\CursoInformática_Senac\\Módulo_2\\UC07\\Biblioteca\\Views\\Usuarios\\ExcluirUsuario.cshtml",
+      "TargetPath": "Views\\Usuarios\\ExcluirUsuario.cshtml",
       "FileKind": "mvc"
     }
   ],

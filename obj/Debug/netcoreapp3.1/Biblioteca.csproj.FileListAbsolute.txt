@@ -104,3 +104,9 @@ F:\Edinaldo\CursoInformática_Senac\Módulo_2\UC07\Biblioteca\obj\Debug\netcorea
 F:\Edinaldo\CursoInformática_Senac\Módulo_2\UC07\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.dll
 F:\Edinaldo\CursoInformática_Senac\Módulo_2\UC07\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.pdb
 F:\Edinaldo\CursoInformática_Senac\Módulo_2\UC07\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.genruntimeconfig.cache
+F:\Edinaldo\CursoInformática_Senac\Módulo_2\UC07\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\CadastroRealizado.cshtml.g.cs
+F:\Edinaldo\CursoInformática_Senac\Módulo_2\UC07\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\EditarUsuario.cshtml.g.cs
+F:\Edinaldo\CursoInformática_Senac\Módulo_2\UC07\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\ExcluirUsuario.cshtml.g.cs
+F:\Edinaldo\CursoInformática_Senac\Módulo_2\UC07\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\ListaDeUsuarios.cshtml.g.cs
+F:\Edinaldo\CursoInformática_Senac\Módulo_2\UC07\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\NeedAdmin.cshtml.g.cs
+F:\Edinaldo\CursoInformática_Senac\Módulo_2\UC07\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\RegistrarUsuarios.cshtml.g.cs

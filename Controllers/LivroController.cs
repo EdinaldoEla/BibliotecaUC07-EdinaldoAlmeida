@@ -1,3 +1,4 @@
+using System;
 using Biblioteca.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,21 +15,27 @@ namespace Biblioteca.Controllers
         [HttpPost]
         public IActionResult Cadastro(Livro l)
         {
-            LivroService livroService = new LivroService();
-
-            if(l.Id == 0)
+            if(!string.IsNullOrEmpty(l.Titulo) && !string.IsNullOrEmpty(l.Autor) && l.Ano !=0)
             {
-                livroService.Inserir(l);
+                LivroService LS = new LivroService();
+                if(l.Id == 0)
+                {
+                    LS.Inserir(l);
+                }
+                else
+                {
+                    LS.Atualizar(l);
+                }
+
+                return RedirectToAction("Listagem");
             }
             else
             {
-                livroService.Atualizar(l);
+                ViewData["mensagem"]="Necessário preencher todos os campos!";
+                return View();
             }
-
-            return RedirectToAction("Listagem");
         }
-
-        public IActionResult Listagem(string tipoFiltro, string filtro)
+        public IActionResult Listagem(string tipoFiltro, string filtro, string itensPorPagina, int NumDaPagina, int paginaAtual)
         {
             Autenticacao.CheckLogin(this);
             FiltrosLivros objFiltro = null;
@@ -38,15 +45,21 @@ namespace Biblioteca.Controllers
                 objFiltro.Filtro = filtro;
                 objFiltro.TipoFiltro = tipoFiltro;
             }
-            LivroService livroService = new LivroService();
-            return View(livroService.ListarTodos(objFiltro));
+            
+            LivroService LS = new LivroService();
+
+            ViewData["livrosPorPagina"] = (string.IsNullOrEmpty(itensPorPagina) ? 10 : Int32.Parse(itensPorPagina));
+
+            ViewData["PaginaAtual"] = (paginaAtual !=0 ? paginaAtual : 1);
+            
+           return View(LS.ListarTodos(objFiltro));
         }
 
         public IActionResult Edicao(int id)
         {
             Autenticacao.CheckLogin(this);
-            LivroService ls = new LivroService();
-            Livro l = ls.ObterPorId(id);
+            LivroService LS = new LivroService();
+            Livro l = LS.ObterPorId(id);
             return View(l);
         }
     }

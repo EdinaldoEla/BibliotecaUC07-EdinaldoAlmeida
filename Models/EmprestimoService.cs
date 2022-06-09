@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Biblioteca.Models
 {
-    public class EmprestimoService 
+   public class EmprestimoService 
     {
         public void Inserir(Emprestimo e)
         {
@@ -30,11 +30,51 @@ namespace Biblioteca.Models
             }
         }
 
-        public ICollection<Emprestimo> ListarTodos(FiltrosEmprestimos filtro)
+public ICollection<Emprestimo> ListarTodos(FiltrosEmprestimos filtro)
         {
             using(BibliotecaContext bc = new BibliotecaContext())
             {
-                return bc.Emprestimos.Include(e => e.Livro).ToList();
+                IQueryable<Emprestimo> consulta;
+                
+                if(filtro != null)
+                {
+                    //definindo dinamicamente a filtragem
+                    switch(filtro.TipoFiltro)
+                    {
+                        case "Usuario":
+                            consulta = bc.Emprestimos.Where(e => e.NomeUsuario.Contains(filtro.Filtro));
+                        break;
+
+                        case "Livro":
+                            List<Livro> LivrosFiltrados = bc.Livros.Where(l => l.Titulo.Contains(filtro.Filtro)).ToList();
+
+                            List<int>LivrosIds = new List<int>();
+                            for(int i = 0; i < LivrosFiltrados.Count; i++)
+                                {LivrosIds.Add(LivrosFiltrados[i].Id);}
+
+                            consulta = bc.Emprestimos.Where(e => LivrosIds.Contains(e.LivroId));
+                            var debug = consulta.ToList();
+                        break;
+
+                        default:
+                            consulta = bc.Emprestimos;
+                        break;
+                    }
+                }
+                else
+                {
+                    // caso filtro não tenha sido informado
+                    consulta = bc.Emprestimos;
+                }
+
+                List<Emprestimo>ListaConsulta = consulta.OrderByDescending(e => e.DataDevolucao).ToList();
+
+                for(int i = 0; i < ListaConsulta.Count; i++)
+                {
+                    ListaConsulta[i].Livro = bc.Livros.Find(ListaConsulta[i].LivroId);
+                }
+                
+                return ListaConsulta;
             }
         }
 
